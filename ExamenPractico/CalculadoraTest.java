@@ -1,23 +1,34 @@
-package equipo4;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-class CalculadoraDividirTest {
+class CalculadoraTest {
 
-      @Test
-      void dividirNumerosValidos() {
-          Calculadora calc = new Calculadora();
-          int resultado = calc.dividir(10, 2);
-          assertEquals(5, resultado);
-    }
-
-         @Test
-          void dividirEntreCeroLanzaExcepcion() {
+    @Test
+    void sumarDosPositivos() {
         Calculadora calc = new Calculadora();
-        assertThrows(IllegalArgumentException.class,
-                () -> calc.dividir(10, 0));
+        int resultado = calc.sumar(3, 4);
+        assertEquals(7, resultado);
     }
-  }
+
+    @Test
+    void sumarConNumeroNegativo() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.sumar(-2, 5);
+        assertEquals(3, resultado);
+    }
+
+    @Test
+    void dividirNumerosValidos() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.dividir(10, 2);
+        assertEquals(5, resultado);
+    }
+
+    @Test
+    void dividirEntreCeroLanzaExcepcion() {
+        Calculadora calc = new Calculadora();
+        assertThrows(IllegalArgumentException.class, () -> calc.dividir(10, 0));
+    }
+}
