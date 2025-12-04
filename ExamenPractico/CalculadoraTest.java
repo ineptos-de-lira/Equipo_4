@@ -18,7 +18,21 @@ class CalculadoraTest {
         int resultado = calc.sumar(-2, 5);
         assertEquals(3, resultado);
     }
-    
+
+    @Test
+    void restarPositivos() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.restar(10, 4);
+        assertEquals(6, resultado);
+    }
+
+    @Test
+    void restarResultadoNegativo() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.restar(3, 5);
+        assertEquals(-2, resultado);
+    }
+
     @Test
     void multiplicarPositivos() {
         Calculadora calc = new Calculadora();
