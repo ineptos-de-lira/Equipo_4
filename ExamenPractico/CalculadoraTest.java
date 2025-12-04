@@ -18,6 +18,20 @@ class CalculadoraTest {
         int resultado = calc.sumar(-2, 5);
         assertEquals(3, resultado);
     }
+    
+    @Test
+    void multiplicarPositivos() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.multiplicar(3, 5);
+        assertEquals(15, resultado);
+    }
+
+    @Test
+    void multiplicarPorCero() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.multiplicar(9, 0);
+        assertEquals(0, resultado);
+    }
 
     @Test
     void dividirNumerosValidos() {
